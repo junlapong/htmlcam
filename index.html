@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Camera</title>
+  </head>
+  <body>
+    <video id="camera" autoplay playsinline></video>
+    <script>
+      const videoElement = document.getElementById("camera");
+      navigator.mediaDevices
+        .getUserMedia({
+          video: {},
+        })
+        .then((stream) => {
+          videoElement.srcObject = stream;
+        });
+    </script>
+  </body>
+</html>
